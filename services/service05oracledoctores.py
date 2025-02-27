@@ -38,13 +38,13 @@ class ServiceOracleDoctores:
         cursor.close()
         return registros
     def modificarDoctor(self, iddoctor, apellido, especialidad, salario, hospital):
-        sql = """"
-        update DOCTOR set APELLIDO=:p1, ESPECIALIDAD=:p2
-        , SALARIO=p3, HOSPITAL_COD=p4 
-        where DOCTOR_NO=:p5
+        sql = """
+            update DOCTOR set APELLIDO=:p1, ESPECIALIDAD=:p2
+            , SALARIO=:p3, HOSPITAL_COD=:p4 
+            where DOCTOR_NO=:p5 
         """
         cursor = self.connection.cursor()
-        cursor.execute(sql, (apellido,especialidad,salario,hospital,iddoctor))
+        cursor.execute(sql, (apellido,especialidad,salario, hospital, iddoctor))
         registros = cursor.rowcount
         self.connection.commit()
         cursor.close()
