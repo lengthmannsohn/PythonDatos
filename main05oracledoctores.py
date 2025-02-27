@@ -9,6 +9,7 @@ for doc in doctores:
 
 print("1.- Insertar doctor")
 print("2.- Eliminar doctor")
+print("3.- Modificar doctor")
 print("Seleccione una opción")
 opcion = int(input())
 if (opcion == 1):
@@ -29,4 +30,17 @@ elif (opcion == 2):
     iddoctor = int(input())
     registros = servicio.eliminarDoctor(iddoctor)
     print(f"Doctores eliminados: {registros}")
+elif (opcion == 3):
+    print ("Id del doctor a modificar")
+    iddoctor = int(input())
+    print("Nuevo apellido")
+    ape = input()
+    print("Nueva especialidad")
+    espe = input()
+    print("Salario: ")
+    sal = int(input())
+    print("Hospital:")
+    hosp = int(input())
+    reg = servicio.modificarDoctor(iddoctor, ape, espe, sal, hosp)
+    print (f"Doctores modificados: {registros}")
 print("Fin de programa")
