@@ -41,6 +41,6 @@ elif (opcion == 3):
     sal = int(input())
     print("Hospital:")
     hosp = int(input())
-    reg = servicio.modificarDoctor(iddoctor, ape, espe, sal, hosp)
+    registros = servicio.modificarDoctor(iddoctor, ape, espe, sal, hosp)
     print (f"Doctores modificados: {registros}")
 print("Fin de programa")
