@@ -13,3 +13,6 @@ class ServiceOracleHospitales:
         for row in cursor:
             hosp = model.Hospital()
             hosp.hospitalCod = row[1]
+            hosp.nombre = row[2]
+            hosp.direccion = row [3]
+            hosp.telefono = row [4]
