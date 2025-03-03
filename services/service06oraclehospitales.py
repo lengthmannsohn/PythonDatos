@@ -16,3 +16,4 @@ class ServiceOracleHospitales:
             hosp.nombre = row[2]
             hosp.direccion = row [3]
             hosp.telefono = row [4]
+
