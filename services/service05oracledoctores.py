@@ -37,6 +37,7 @@ class ServiceOracleDoctores:
         self.connection.commit()
         cursor.close()
         return registros
+    
     def modificarDoctor(self, iddoctor, apellido, especialidad, salario, hospital):
         sql = """
             update DOCTOR set APELLIDO=:p1, ESPECIALIDAD=:p2

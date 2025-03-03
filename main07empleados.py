@@ -1,9 +1,9 @@
-from services import service07mysqlempleados as service
+from services import service07sqlserverempleados as service
 from models.empleado import Empleado
 
 print ("Probando servicios varios de BBDD")
 
-servicio = service.ServiceMySqlEmpleados()
+servicio = service.ServiceSqlServerEmpleados()
 
 empleados = servicio.getEmpleados()
 for emp in empleados:
