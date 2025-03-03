@@ -1,8 +1,7 @@
-from services import service08plantilla as service
+from services import service08sqlserverplantilla as service
 from models import plantilla
 
-
-servicio = service.ServicePlantilla()
+servicio = service.ServiceSqlServerPlantilla()
 plantilla = servicio.getPlantilla()
 
 for plan in plantilla:

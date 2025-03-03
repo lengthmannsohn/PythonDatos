@@ -1,9 +1,9 @@
-import oracledb
+import pyodbc
 from models.plantilla import Plantilla
 
-class ServicePlantilla:
+class ServiceSqlServerPlantilla:
     def __init__(self):
-        self.connection = oracledb.connect(user='SYSTEM', password='oracle', dsn='localhost/xe')
+        self.connection = pyodbc.connect('DRIVER={ODBC Driver 18 for SQL Server};SERVER=127.0.0.1;DATABASE=HOSPITAL;UID=SA;PWD=Getafe12345@@;TrustServerCertificate=yes')
 
     def getPlantilla(self):
         sql = "select * from PLANTILLA"
@@ -22,7 +22,7 @@ class ServicePlantilla:
         return data
 
     def updateSalarioPlantilla(self, incremento, numHospital):
-        sql = "UPDATE PLANTILLA SET SALARIO = SALARIO + :p1 WHERE HOSPITAL_COD = :p2"
+        sql = "UPDATE PLANTILLA SET SALARIO = SALARIO + ? WHERE HOSPITAL_COD = ?"
         cursor = self.connection.cursor()
         cursor.execute(sql, (incremento, numHospital))
         registros = cursor.rowcount
